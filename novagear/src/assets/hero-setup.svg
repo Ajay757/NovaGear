@@ -1,0 +1,81 @@
+<svg width="960" height="680" viewBox="0 0 960 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backdrop" x1="78" y1="42" x2="882" y2="638" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F3FF"/>
+      <stop offset="0.48" stop-color="#ECFEFF"/>
+      <stop offset="1" stop-color="#FDF2F8"/>
+    </linearGradient>
+    <linearGradient id="mat" x1="162" y1="405" x2="790" y2="582" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDD6FE"/>
+      <stop offset="0.54" stop-color="#CFFAFE"/>
+      <stop offset="1" stop-color="#F5D0FE"/>
+    </linearGradient>
+    <linearGradient id="monitorScreen" x1="311" y1="129" x2="634" y2="346" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.52" stop-color="#29215C"/>
+      <stop offset="1" stop-color="#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="keyboardGlow" x1="231" y1="440" x2="593" y2="505" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="0.5" stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="softShadow" x="60" y="70" width="840" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="24"/>
+      <feGaussianBlur stdDeviation="24"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0 0.17 0 0 0 0.18 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="680" rx="52" fill="url(#backdrop)"/>
+  <circle cx="170" cy="136" r="118" fill="#A78BFA" fill-opacity="0.18"/>
+  <circle cx="790" cy="164" r="142" fill="#22D3EE" fill-opacity="0.16"/>
+  <circle cx="726" cy="524" r="122" fill="#F472B6" fill-opacity="0.14"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M168 413C168 387.595 188.595 367 214 367H746C771.405 367 792 387.595 792 413V531C792 556.405 771.405 577 746 577H214C188.595 577 168 556.405 168 531V413Z" fill="url(#mat)"/>
+    <path d="M190 421C190 405.536 202.536 393 218 393H742C757.464 393 770 405.536 770 421V526C770 541.464 757.464 554 742 554H218C202.536 554 190 541.464 190 526V421Z" fill="white" fill-opacity="0.42"/>
+
+    <path d="M306 116C306 99.4315 319.431 86 336 86H624C640.569 86 654 99.4315 654 116V319C654 335.569 640.569 349 624 349H336C319.431 349 306 335.569 306 319V116Z" fill="#18181B"/>
+    <path d="M323 130C323 119.507 331.507 111 342 111H618C628.493 111 637 119.507 637 130V304C637 314.493 628.493 323 618 323H342C331.507 323 323 314.493 323 304V130Z" fill="url(#monitorScreen)"/>
+    <path d="M353 270C407 230 454 239 500 198C542 161 579 162 621 196V304H353V270Z" fill="#A78BFA" fill-opacity="0.22"/>
+    <path d="M374 179H517" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="10" stroke-linecap="round"/>
+    <path d="M374 215H580" stroke="#FFFFFF" stroke-opacity="0.38" stroke-width="10" stroke-linecap="round"/>
+    <path d="M452 349H508V390H452V349Z" fill="#D4D4D8"/>
+    <path d="M405 390H555C565.493 390 574 398.507 574 409V412H386V409C386 398.507 394.507 390 405 390Z" fill="#F8FAFC"/>
+
+    <path d="M681 161C681 145.536 693.536 133 709 133H767C782.464 133 795 145.536 795 161V427C795 442.464 782.464 455 767 455H709C693.536 455 681 442.464 681 427V161Z" fill="#111827"/>
+    <path d="M701 162H775V424H701V162Z" fill="#F8FAFC" fill-opacity="0.92"/>
+    <circle cx="738" cy="250" r="35" fill="#EDE9FE" stroke="#27272A" stroke-width="8"/>
+    <circle cx="738" cy="250" r="10" fill="#27272A"/>
+    <path d="M716 343H760" stroke="#27272A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M716 374H760" stroke="#27272A" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="738" cy="196" r="8" fill="#8B5CF6"/>
+
+    <path d="M234 430C234 415.641 246.351 404.391 260.641 405.727L560.641 433.779C572.565 434.894 581.683 444.903 581.683 456.88V513.077C581.683 527.277 569.594 538.477 555.442 537.391L255.442 514.374C243.352 513.446 234 503.362 234 491.236V430Z" fill="#111827"/>
+    <path d="M255 433C255 428.582 258.582 425 263 425H549C553.418 425 557 428.582 557 433V498C557 502.418 553.418 506 549 506H263C258.582 506 255 502.418 255 498V433Z" fill="#FAFAFA"/>
+    <rect x="276" y="444" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="313" y="444" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="350" y="444" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="387" y="444" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="424" y="444" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="461" y="444" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="498" y="444" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="276" y="471" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="313" y="471" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="350" y="471" width="100" height="16" rx="4" fill="#27272A"/>
+    <rect x="461" y="471" width="26" height="16" rx="4" fill="#27272A"/>
+    <rect x="498" y="471" width="26" height="16" rx="4" fill="#27272A"/>
+    <path d="M264 521L562 543" stroke="url(#keyboardGlow)" stroke-width="8" stroke-linecap="round"/>
+
+    <path d="M640 427C674.242 427 697 456.141 697 498C697 534.451 674.242 558 640 558C605.758 558 583 534.451 583 498C583 456.141 605.758 427 640 427Z" fill="#FFFFFF"/>
+    <path d="M640 431V487" stroke="#27272A" stroke-width="7" stroke-linecap="round"/>
+    <path d="M617 455C625.096 441.306 632.765 433.868 640 430C647.235 433.868 654.904 441.306 663 455" stroke="#27272A" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="640" cy="495" r="8" fill="#8B5CF6"/>
+  </g>
+</svg>
