@@ -153,9 +153,10 @@ function ProductDetailsModal({
       onClick={onClose}
     >
       <div
-        className="max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-[2rem] bg-white p-5 shadow-2xl sm:p-7"
+        className="max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-[2rem] bg-white shadow-2xl"
         onClick={(event) => event.stopPropagation()}
       >
+        <div className="catalog-scroll max-h-[92vh] overflow-y-auto p-5 pr-6 sm:p-7 sm:pr-9">
         <div className="flex justify-end">
           <button
             type="button"
@@ -294,6 +295,7 @@ function ProductDetailsModal({
             ))}
           </div>
         </section>
+        </div>
       </div>
     </div>
   );

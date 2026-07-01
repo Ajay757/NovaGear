@@ -105,7 +105,7 @@ function Navbar({ cartItemCount, favouriteItemCount, accountUser }) {
   }
 
   return (
-    <header className="sticky top-0 z-20 border-b border-zinc-200/80 bg-white/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-20 border-b border-zinc-300/80 bg-[#F3EFF8]/95 backdrop-blur-xl">
       <nav
         aria-label="Primary navigation"
         className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-8"
@@ -230,6 +230,7 @@ function Navbar({ cartItemCount, favouriteItemCount, accountUser }) {
             <Icon name="heart" />
             <span
               aria-hidden="true"
+              style={{ color: "#ffffff" }}
               className="absolute -right-3 -top-2 min-w-5 rounded-full bg-violet-700 px-1.5 py-0.5 text-center text-xs font-black text-white"
             >
               {favouriteItemCount}

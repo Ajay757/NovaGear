@@ -178,14 +178,14 @@ function renderProductShape(category) {
       return (
         <>
           <rect x="28" y="72" width="184" height="58" rx="12" />
-          {Array.from({ length: 36 }).map((_, index) => {
-            const row = Math.floor(index / 9);
-            const column = index % 9;
+          {Array.from({ length: 32 }).map((_, index) => {
+            const row = Math.floor(index / 8);
+            const column = index % 8;
 
             return (
               <rect
                 key={index}
-                x={45 + column * 17}
+                x={47 + column * 18}
                 y={86 + row * 9}
                 width={11}
                 height={6}
@@ -193,7 +193,7 @@ function renderProductShape(category) {
               />
             );
           })}
-          <rect x="69" y="122" width="86" height="6" rx="3" />
+          <rect x="74" y="122" width="92" height="6" rx="3" />
         </>
       );
     case "Mouse":
@@ -293,8 +293,8 @@ function renderProductShape(category) {
       return (
         <>
           <path d="M70 76c18-11 36-4 50 8 14-12 32-19 50-8 16 9 23 32 28 58 3 15-11 25-24 16l-21-17H87l-21 17c-13 9-27-1-24-16 5-26 12-49 28-58Z" />
-          <path d="M78 110h34" />
-          <path d="M95 93v34" />
+          <path d="M82 107h26" />
+          <path d="M95 94v26" />
           <circle cx="153" cy="101" r="6" />
           <circle cx="172" cy="118" r="6" />
         </>
@@ -302,14 +302,14 @@ function renderProductShape(category) {
     case "Mousepad":
       return (
         <>
-          <path d="M43 78 182 51c14-3 27 6 30 20l12 55c3 14-6 27-20 30L65 183c-14 3-27-6-30-20L23 108c-3-14 6-27 20-30Z" />
-          <path d="M52 95 185 70" fill="none" />
-          <path d="M58 161 199 134" fill="none" />
+          <path d="M35 73 174 46c14-3 27 6 30 20l12 55c3 14-6 27-20 30L57 178c-14 3-27-6-30-20L15 103c-3-14 6-27 20-30Z" />
+          <path d="M44 90 177 65" fill="none" />
+          <path d="M50 156 191 129" fill="none" />
           <path
-            d="M158 113c17 0 29 13 29 31 0 15-12 26-29 26s-29-11-29-26c0-18 12-31 29-31Z"
+            d="M150 108c17 0 29 13 29 31 0 15-12 26-29 26s-29-11-29-26c0-18 12-31 29-31Z"
             fill="#ffffff"
           />
-          <path d="M158 116v24" fill="none" />
+          <path d="M150 111v24" fill="none" />
         </>
       );
     default:

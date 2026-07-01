@@ -120,7 +120,7 @@ function Home({ onAddToCart, onToggleFavourite, isFavourite }) {
 
   return (
     <div className="space-y-20">
-      <section className="grid min-h-[680px] items-center gap-12 overflow-hidden rounded-[2rem] bg-gradient-to-br from-violet-200 via-fuchsia-50 to-cyan-200 p-8 shadow-sm sm:p-12 lg:grid-cols-[0.9fr_1.1fr] lg:p-16">
+      <section className="grid min-h-[680px] items-center gap-12 overflow-hidden rounded-[2rem] bg-gradient-to-br from-violet-300 via-fuchsia-100 to-cyan-300 p-8 shadow-sm sm:p-12 lg:grid-cols-[0.9fr_1.1fr] lg:p-16">
         <div>
           <p className="mb-5 text-sm font-black uppercase tracking-wide text-violet-700">
             NovaGear
@@ -148,7 +148,7 @@ function Home({ onAddToCart, onToggleFavourite, isFavourite }) {
           </div>
         </div>
 
-        <div className="relative flex min-h-[360px] items-center justify-center rounded-[2rem] bg-white/65 p-8">
+        <div className="relative flex min-h-[360px] items-center justify-center rounded-[2rem] bg-white/55 p-8">
           <div className="absolute inset-x-12 bottom-12 h-12 rounded-full bg-zinc-950/10 blur-2xl" />
           <img
             src={heroImage}
@@ -160,7 +160,7 @@ function Home({ onAddToCart, onToggleFavourite, isFavourite }) {
 
       <section
         aria-labelledby="featured-products-heading"
-        className="rounded-[2rem] bg-gradient-to-br from-violet-100 to-fuchsia-100 p-6 shadow-sm sm:p-8 lg:p-10"
+        className="rounded-[2rem] bg-gradient-to-br from-violet-200 to-fuchsia-200 p-6 shadow-sm sm:p-8 lg:p-10"
       >
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -195,7 +195,7 @@ function Home({ onAddToCart, onToggleFavourite, isFavourite }) {
         </div>
       </section>
 
-      <section className="rounded-[2rem] bg-gradient-to-br from-emerald-100 via-cyan-50 to-sky-100 p-6 shadow-sm sm:p-8 lg:p-10">
+      <section className="rounded-[2rem] bg-gradient-to-br from-emerald-200 via-cyan-100 to-sky-200 p-6 shadow-sm sm:p-8 lg:p-10">
         <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-black uppercase tracking-wide text-violet-700">
@@ -259,7 +259,7 @@ function Home({ onAddToCart, onToggleFavourite, isFavourite }) {
         </div>
       </section>
 
-      <section className="overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.32),transparent_24rem),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.34),transparent_22rem),linear-gradient(135deg,#063F3B,#0F2F4A_48%,#24114F)] p-8 text-white shadow-sm sm:p-10 lg:p-14">
+      <section id="performance" className="scroll-mt-28 overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.32),transparent_24rem),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.34),transparent_22rem),linear-gradient(135deg,#063F3B,#0F2F4A_48%,#24114F)] p-8 text-white shadow-sm sm:p-10 lg:p-14">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-wide text-violet-200">
             Everyday Performance

@@ -142,7 +142,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="flex min-h-screen flex-col bg-[#F4F2F8] text-zinc-950">
+      <div className="flex min-h-screen flex-col bg-[#E9E4EF] text-zinc-950">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
