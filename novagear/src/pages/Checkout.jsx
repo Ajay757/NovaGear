@@ -148,14 +148,6 @@ function getShippingFromAccount(user) {
   };
 }
 
-function getPaymentFromAccount(user) {
-  return {
-    ...initialPayment,
-    cardName: user?.fullName ?? "",
-    cvv: "",
-  };
-}
-
 function isValidEmail(value) {
   return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(
     value.trim(),
@@ -481,9 +473,7 @@ function Checkout({ cartItems, accountUser }) {
   const [shipping, setShipping] = useState(() =>
     getShippingFromAccount(accountUser),
   );
-  const [payment, setPayment] = useState(() =>
-    getPaymentFromAccount(accountUser),
-  );
+  const [payment, setPayment] = useState(initialPayment);
   const [submittedSteps, setSubmittedSteps] = useState({});
   const [fieldErrors, setFieldErrors] = useState({});
 
@@ -494,7 +484,7 @@ function Checkout({ cartItems, accountUser }) {
 
     setCheckoutAccess("ready");
     setShipping(getShippingFromAccount(accountUser));
-    setPayment(getPaymentFromAccount(accountUser));
+    setPayment(initialPayment);
     setFieldErrors({});
   }, [accountUser]);
 
@@ -608,79 +598,97 @@ function Checkout({ cartItems, accountUser }) {
       </section>
 
       {!accountUser && checkoutAccess === "choice" && (
-        <section className="rounded-[2rem] bg-white p-8 shadow-sm sm:p-10">
-          <p className="text-sm font-black uppercase tracking-wide text-violet-700">
-            Account Check
-          </p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight text-zinc-950">
-            How would you like to checkout?
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-600">
-            Sign in or create an account to reuse saved details, or continue as
-            a guest and enter contact information for tracking updates.
-          </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/account"
-              state={{ returnTo: "/checkout" }}
-              className="btn-primary-glow rounded-full px-6 py-3 text-center text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
-            >
-              Log In / Sign Up
-            </Link>
-            <button
-              type="button"
-              onClick={continueAsGuest}
-              className="btn-secondary-polish rounded-full border px-6 py-3 text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
-            >
-              Continue as Guest
-            </button>
-          </div>
-        </section>
+        <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
+          <section className="rounded-[2rem] bg-white p-8 shadow-sm sm:p-10">
+            <p className="text-sm font-black uppercase tracking-wide text-violet-700">
+              Account Check
+            </p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-zinc-950">
+              How would you like to checkout?
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-600">
+              Sign in or create an account to reuse saved details, or continue as
+              a guest and enter contact information for tracking updates.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/account"
+                state={{ returnTo: "/checkout" }}
+                className="btn-primary-glow rounded-full px-6 py-3 text-center text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
+              >
+                Log In / Sign Up
+              </Link>
+              <button
+                type="button"
+                onClick={continueAsGuest}
+                className="btn-secondary-polish rounded-full border px-6 py-3 text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
+              >
+                Continue as Guest
+              </button>
+            </div>
+          </section>
+
+          <OrderSummary
+            cartItems={cartItems}
+            subtotal={subtotal}
+            estimatedTax={estimatedTax}
+            total={total}
+          />
+        </div>
       )}
 
       {!accountUser && checkoutAccess === "guestContact" && (
-        <section className="rounded-[2rem] bg-white p-8 shadow-sm sm:p-10">
-          <p className="text-sm font-black uppercase tracking-wide text-violet-700">
-            Guest Contact
-          </p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight text-zinc-950">
-            Add contact details for tracking.
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-600">
-            We need an email and phone number before shipping so NovaGear can
-            send order confirmations, delivery updates, and package tracking.
-          </p>
-          <div className="mt-7 grid gap-6 sm:grid-cols-3">
-            {guestContactFields.map((field) => (
-              <TextField
-                key={field.name}
-                field={field}
-                value={guestContact[field.name]}
-                onChange={updateGuestContact}
-                error={fieldErrors[field.name]}
-              />
-            ))}
-          </div>
-          <div className="mt-8 flex flex-col-reverse gap-3 border-t border-zinc-200 pt-6 sm:flex-row sm:justify-between">
-            <button
-              type="button"
-              onClick={() => {
-                setCheckoutAccess("choice");
-                setFieldErrors({});
-              }}
-              className="btn-secondary-polish rounded-full border px-6 py-3 text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
-            >
-              Back
-            </button>
-            <button
-              type="button"
-              onClick={continueFromGuestContact}
-              className="btn-primary-glow rounded-full px-6 py-3 text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
-            >
-              Continue to Shipping
-            </button>
-          </div>
-        </section>
+        <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
+          <section className="rounded-[2rem] bg-white p-8 shadow-sm sm:p-10">
+            <p className="text-sm font-black uppercase tracking-wide text-violet-700">
+              Guest Contact
+            </p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-zinc-950">
+              Add contact details for tracking.
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-600">
+              We need an email and phone number before shipping so NovaGear can
+              send order confirmations, delivery updates, and package tracking.
+            </p>
+            <div className="mt-7 grid gap-6 sm:grid-cols-3">
+              {guestContactFields.map((field) => (
+                <TextField
+                  key={field.name}
+                  field={field}
+                  value={guestContact[field.name]}
+                  onChange={updateGuestContact}
+                  error={fieldErrors[field.name]}
+                />
+              ))}
+            </div>
+            <div className="mt-8 flex flex-col-reverse gap-3 border-t border-zinc-200 pt-6 sm:flex-row sm:justify-between">
+              <button
+                type="button"
+                onClick={() => {
+                  setCheckoutAccess("choice");
+                  setFieldErrors({});
+                }}
+                className="btn-secondary-polish rounded-full border px-6 py-3 text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                onClick={continueFromGuestContact}
+                className="btn-primary-glow rounded-full px-6 py-3 text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
+              >
+                Continue to Shipping
+              </button>
+            </div>
+          </section>
+
+          <OrderSummary
+            cartItems={cartItems}
+            subtotal={subtotal}
+            estimatedTax={estimatedTax}
+            total={total}
+          />
+        </div>
       )}
 
       {checkoutAccess === "ready" && <CheckoutStepper currentStep={currentStep} />}
@@ -745,12 +753,6 @@ function Checkout({ cartItems, accountUser }) {
                   />
                 ))}
               </div>
-              {accountUser && (
-                <p className="mt-5 rounded-2xl bg-violet-50 p-4 text-sm font-semibold text-violet-900">
-                  We filled the cardholder name from your account. CVV is never
-                  saved or autofilled.
-                </p>
-              )}
             </div>
           )}
 

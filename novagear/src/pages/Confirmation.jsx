@@ -93,6 +93,21 @@ function Confirmation({ cartItems }) {
             </div>
           </div>
 
+          <div className="mt-6 rounded-3xl border border-white/10 bg-white/10 p-4 text-sm font-semibold text-zinc-300">
+            <div className="flex justify-between gap-4">
+              <span>Order number</span>
+              <span className="font-black text-white">{orderNumber}</span>
+            </div>
+            <div className="mt-3 flex justify-between gap-4">
+              <span>Status</span>
+              <span className="font-black text-emerald-300">Processing</span>
+            </div>
+            <div className="mt-3 flex justify-between gap-4">
+              <span>Delivery</span>
+              <span className="font-black text-white">3-5 business days</span>
+            </div>
+          </div>
+
           <div className="mt-7 grid gap-3">
             <Link
               to="/products"
@@ -100,15 +115,32 @@ function Confirmation({ cartItems }) {
             >
               Continue Shopping
             </Link>
-            <Link
-              to="/survey"
-              className="flex justify-center rounded-full border border-white/20 px-5 py-3 text-sm font-black uppercase tracking-wide text-white hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-violet-300"
-            >
-              Leave Feedback
-            </Link>
           </div>
         </aside>
       </div>
+
+      <section className="rounded-[2rem] bg-gradient-to-br from-violet-200 to-fuchsia-200 p-8 shadow-sm sm:p-10">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-sm font-black uppercase tracking-wide text-violet-700">
+              Post-Purchase Feedback
+            </p>
+            <h2 className="mt-2 text-3xl font-black tracking-tight text-zinc-950">
+              Help us improve your next upgrade.
+            </h2>
+            <p className="mt-3 max-w-2xl leading-7 text-zinc-700">
+              Now that your order is complete, you can leave quick feedback
+              without interrupting the shopping or checkout process.
+            </p>
+          </div>
+          <Link
+            to="/survey"
+            className="btn-primary-glow inline-flex justify-center rounded-full px-6 py-3 text-sm font-black uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-violet-500"
+          >
+            Open Survey
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

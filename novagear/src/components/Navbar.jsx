@@ -108,11 +108,11 @@ function Navbar({ cartItemCount, favouriteItemCount, accountUser }) {
     <header className="sticky top-0 z-20 border-b border-zinc-300/80 bg-[#F3EFF8]/95 backdrop-blur-xl">
       <nav
         aria-label="Primary navigation"
-        className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-8"
+        className="mx-auto flex max-w-7xl items-center gap-4 overflow-x-auto px-4 py-4 lg:justify-between lg:px-8"
       >
         <Link
           to="/"
-          className="group inline-flex items-center gap-3 text-2xl font-black tracking-tight text-zinc-950 hover:text-violet-700"
+          className="group inline-flex shrink-0 items-center gap-3 text-xl font-black tracking-tight text-zinc-950 hover:text-violet-700 md:text-2xl"
         >
           <span className="h-9 w-9 rounded-full bg-zinc-950 text-center text-lg leading-9 text-white transition group-hover:bg-violet-700">
             N
@@ -120,14 +120,14 @@ function Navbar({ cartItemCount, favouriteItemCount, accountUser }) {
           <span>NovaGear</span>
         </Link>
 
-        <div className="flex flex-wrap gap-8 lg:mr-auto lg:ml-10">
+        <div className="flex shrink-0 gap-3 md:gap-6 lg:mr-auto lg:ml-6">
           {links.map((link) => (
             link.to.startsWith("/") && !link.to.includes("#") ? (
               <NavLink
                 key={link.label}
                 to={link.to}
                 className={({ isActive }) =>
-                  `rounded-full px-3 py-1.5 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-4 ${
+                  `rounded-full px-2.5 py-1.5 text-base font-bold whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-4 md:px-3 md:text-lg ${
                     isActive
                       ? "bg-zinc-950 text-white"
                       : "text-zinc-800 hover:text-violet-700"
@@ -140,7 +140,7 @@ function Navbar({ cartItemCount, favouriteItemCount, accountUser }) {
               <Link
                 key={link.label}
                 to={link.to}
-                className="rounded-full px-3 py-1.5 text-lg font-bold text-zinc-800 hover:text-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-4"
+                className="rounded-full px-2.5 py-1.5 text-base font-bold whitespace-nowrap text-zinc-800 hover:text-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-4 md:px-3 md:text-lg"
               >
                 {link.label}
               </Link>
@@ -148,12 +148,12 @@ function Navbar({ cartItemCount, favouriteItemCount, accountUser }) {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center gap-5">
+        <div className="flex shrink-0 items-center gap-4 md:gap-5">
           <form
             role="search"
             aria-label="Product search"
             onSubmit={submitSearch}
-            className="relative min-w-64"
+            className="relative min-w-40 sm:min-w-52 md:min-w-64"
           >
             <label htmlFor="site-product-search" className="sr-only">
               Search gear
